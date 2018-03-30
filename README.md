@@ -44,7 +44,7 @@ Check out the [Webceo Ruby Gem Google Group](https://groups.google.com/forum/#!f
 
 ## License
 
-Webceo is release under the [MIT License](http://opensource.org/licenses/MIT).
+Webceo is released under the [MIT License](http://opensource.org/licenses/MIT).
 
 ## Todo
 
