@@ -1,10 +1,8 @@
 # Webceo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/webceo`. To experiment with that code, run `bin/console` for an interactive prompt.
+Integrate your ruby application with this `webceo` gem to perform the api action using your webceo account. Take a look at the [Webceo API Reference](https://www.webceo.com/api-documentation.htm).
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
+## Getting Started
 
 Add this line to your application's Gemfile:
 
@@ -22,20 +20,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# initialize an instance of the Client with your API key or
+# set an Environment Variable WEBCEO_API_KEY and initialize client without passing it to the client
+client = Webceo::Api::Client.new('your_api_key')
 
-## Development
+# get list of all the projects, see api reference
+client.get_projects({ :id => 'my_request_id' })
+# => [{:id=>'my_request_id', :data=>[{:project=>"8ady5y7e36", :domain=>"example.com", :user=>["user1@yoursite.com", "user2@yoursite.com", ... ]}, {:project=>"asg4563wef", :domain=>"example.com", :user=>["user3@yoursite.com", "user4@yoursite.com", ... ]}], :method=>"get_projects"}]
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+# get a single project
+client.get_project({ :project => '8ady5y7e36' })
+# => [{:id=>nil, :data=>{:project=>"8ady5y7e36", :domain=>"example.com", :user=>["user1@yoursite.com", "user2@yoursite.com", ... ]}, :method=>"get_projects"}]
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Agnel Waghela/webceo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/agnel/webceo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+Check out the [Webceo Ruby Gem Google Group](https://groups.google.com/forum/#!forum/webceo-api-client/)
 
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+Webceo is release under the [MIT License](http://opensource.org/licenses/MIT).
 
+## Todo
+
+- [ ] Batch Operations Support
+- [ ] Specs
