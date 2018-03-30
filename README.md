@@ -37,6 +37,8 @@ client.get_project({ :project => '8ady5y7e36' })
 
 ## Contributing
 
+[![Open Source Helpers](https://www.codetriage.com/agnel/webceo/badges/users.svg)](https://www.codetriage.com/agnel/webceo)
+
 Bug reports and pull requests are welcome on GitHub at https://github.com/agnel/webceo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 Check out the [Webceo Ruby Gem Google Group](https://groups.google.com/forum/#!forum/webceo-api-client/)
