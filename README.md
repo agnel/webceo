@@ -1,5 +1,7 @@
 # Webceo
 
+[![Gem Version](https://badge.fury.io/rb/webceo.svg)](https://badge.fury.io/rb/webceo)
+
 Integrate your ruby application with this `webceo` gem to perform the api action using your webceo account. Take a look at the [Webceo API Reference](https://www.webceo.com/api-documentation.htm).
 
 ## Getting Started
