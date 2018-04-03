@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'airborne', '~> 0.2.7'
 
-  spec.add_dependency 'httparty', '~> 0.14', '>= 0.14.0'
-  spec.add_dependency 'multi_json', '~> 1.12', '>= 1.12.2'
-  spec.add_dependency 'activesupport', '~> 4.2', '>= 4.2.3'
+  spec.add_dependency 'httparty', '~> 0.14'
+  spec.add_dependency 'multi_json', '~> 1.12'
+  spec.add_dependency 'activesupport', '~> 4.2'
 end
