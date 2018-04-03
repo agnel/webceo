@@ -1,17 +1,21 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+$:.push File.expand_path("../lib", __FILE__)
 require 'webceo/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "webceo"
   spec.version       = Webceo.gem_version
+  spec.platform      = Gem::Platform::RUBY
   spec.authors       = ["Agnel Waghela"]
   spec.email         = ["agnelwaghela@gmail.com"]
 
   spec.summary       = %q{API Client for accessing WebCEO API - http://www.webceo.com/}
-  spec.homepage      = "http://agnelwaghela.in/project/webceo-api-client"
+  spec.homepage      = "https://github.com/agnel/webceo"
   spec.license       = "MIT"
+  spec.metadata      = {
+    'mailing_list_uri' => 'https://groups.google.com/forum/#!forum/webceo-api-client/',
+    'changelog_uri' => 'https://github.com/agnel/webceo/blob/master/CHANGELOG.md'
+  }
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
