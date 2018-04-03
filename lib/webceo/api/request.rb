@@ -33,7 +33,7 @@ module Webceo
       def to_json
         MultiJson.dump({
           method: @method_name.to_s,
-          key: Webceo::Api::Client.default_options[:api_key],
+          key: Webceo.configuration.api_key,
           id: @data[:id],
           data: @data
         })

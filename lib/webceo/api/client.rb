@@ -14,13 +14,7 @@ module Webceo
       #
       # Intializes an instance of Client to make api calls
       #
-      # It accepts an api_key or uses the one set in the environment variable WEBCEO_API_KEY
-      #
-      # @param [String] api_key Webceo API Key
-      #
-      def initialize(api_key = nil)
-        self.class.default_options.merge!({ api_key: (api_key || ENV['WEBCEO_API_KEY']) })
-      end
+      def initialize; end
 
       #
       # It lists names of all the available API methods on the Webceo API Reference

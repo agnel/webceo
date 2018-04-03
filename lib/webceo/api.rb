@@ -1,3 +1,8 @@
+require 'webceo/api/request'
+require 'webceo/api/response'
+require 'webceo/api/error'
+require 'webceo/api/client'
+
 module Webceo
 
   API_METHODS = YAML.load_file('./lib/webceo/api_methods.yml')
