@@ -1,6 +1,13 @@
 # Webceo
 
-[![Gem Version](https://badge.fury.io/rb/webceo.svg)](https://badge.fury.io/rb/webceo)
+[![Gem Version](https://badge.fury.io/rb/webceo.svg)][gem_version]
+[![Gem](https://img.shields.io/gem/dv/webceo/stable.svg)][gem_downloads]
+![GitHub tag](https://img.shields.io/github/tag/agnel/webceo.svg)
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/agnelwaghela.svg)][liberapay_donate_link]
+
+[gem_version]: https://badge.fury.io/rb/webceo
+[gem_downloads]: https://rubygems.org/gems/webceo
+[liberapay_donate_link]: https://liberapay.com/agnelwaghela/donate
 
 Integrate your ruby application with this `webceo` gem to perform the api action using your webceo account. Take a look at the [Webceo API Reference](https://www.webceo.com/api-documentation.htm).
 
@@ -39,7 +46,10 @@ client.get_project({ :project => '8ady5y7e36' })
 
 ## Contributing
 
-[![Open Source Helpers](https://www.codetriage.com/agnel/webceo/badges/users.svg)](https://www.codetriage.com/agnel/webceo)
+[![Open Source Helpers](https://www.codetriage.com/agnel/webceo/badges/users.svg)][open_source_helpers]
+![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)
+
+[open_source_helpers]: https://www.codetriage.com/agnel/webceo
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/agnel/webceo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
@@ -47,6 +57,10 @@ Check out the [Webceo Ruby Gem Google Group](https://groups.google.com/forum/#!f
 
 
 ## License
+
+[![license](https://img.shields.io/github/license/agnel/webceo.svg)][mit_license]
+
+[mit_license]: http://opensource.org/licenses/MIT
 
 Webceo is released under the [MIT License](http://opensource.org/licenses/MIT).
 
