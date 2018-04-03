@@ -30,9 +30,18 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-# initialize an instance of the Client with your API key or
-# set an Environment Variable WEBCEO_API_KEY and initialize client without passing it to the client
-client = Webceo::Api::Client.new('your_api_key')
+
+# Configure the gem
+Webceo.configure do |config|
+  # set the api_key option as per your convenience, for example using environment variables
+  config.api_key = ENV['WEBCEO_API_KEY']
+end
+
+# initialize an instance of the Client
+client = Webceo::Api::Client.new
+
+# get the list of all methods
+client.list_methods # => ['get_projects', 'get_project', ...]
 
 # get list of all the projects, see api reference
 client.get_projects({ :id => 'my_request_id' })
