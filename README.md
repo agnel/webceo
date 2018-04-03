@@ -27,6 +27,10 @@ Or install it yourself as:
 
     $ gem install webceo
 
+and run the following generator to install the initializer
+
+    $ rails generate webceo:install
+
 ## Usage
 
 ```ruby
