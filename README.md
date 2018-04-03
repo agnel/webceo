@@ -79,7 +79,10 @@ Webceo is released under the [MIT License](http://opensource.org/licenses/MIT).
 
 ## Todo
 
-- [x] Configuration Support #1
-- [x] Generator for initializer with configuration boilerplate #2
+- [x] Configuration Support [#1]
+- [x] Generator for initializer with configuration boilerplate [#2]
 - [ ] Batch Operations Support
 - [ ] Specs
+
+[#1]: https://github.com/agnel/webceo/pull/1
+[#2]: https://github.com/agnel/webceo/pull/2
