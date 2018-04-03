@@ -27,6 +27,10 @@ Or install it yourself as:
 
     $ gem install webceo
 
+and run the following generator to install the initializer
+
+    $ rails generate webceo:install
+
 ## Usage
 
 ```ruby
@@ -76,6 +80,6 @@ Webceo is released under the [MIT License](http://opensource.org/licenses/MIT).
 ## Todo
 
 - [ ] Configuration Support
-- [ ] Generator for initializer with configuration boilerplate
+- [x] Generator for initializer with configuration boilerplate
 - [ ] Batch Operations Support
 - [ ] Specs
