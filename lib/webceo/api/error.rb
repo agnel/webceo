@@ -11,7 +11,7 @@ module Webceo
       attr_accessor :http_status, :response_body, :code, :message, :api_method, :request_id
 
       def initialize(http_status, response_body, error_info = nil)
-        self.response_body = (response_body) ? response_body.strip : ''
+        self.response_body = (response_body || '')
         self.http_status = http_status
 
         if error_info && error_info.is_a?(String)
@@ -19,7 +19,7 @@ module Webceo
         else
           unless error_info
             begin
-              error_info = MultiJson.load(response_body).first if response_body
+              error_info = self.response_body if self.response_body
             rescue
             end
             error_info ||= {}

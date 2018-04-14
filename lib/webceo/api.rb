@@ -2,6 +2,7 @@ require 'webceo/api/request'
 require 'webceo/api/response'
 require 'webceo/api/error'
 require 'webceo/api/client'
+require 'webceo/api/batch_client'
 
 module Webceo
 

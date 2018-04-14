@@ -41,13 +41,9 @@ module Webceo
         if list_methods.include? method_name.to_s
           request = Webceo::Api::Request.new method_name, data
           response = make_request(request)
-          response.check_for_errors
-
-          begin
-            ::MultiJson.load(response.body, :symbolize_keys => true)
-          rescue ::MultiJson::ParseError => e
-            e.cause
-          end
+          error = response.check_for_errors
+          raise error if error.is_a? Webceo::Api::Error
+          response.parse_json
         else
           raise Webceo::Api::ClientError.new(400, nil, {"errormsg" => "Unknown command","method" => method_name.to_s,"result" => 10})
         end
@@ -75,6 +71,16 @@ module Webceo
         end
 
         Webceo::Api::Response.new(result.code, result.body, result.headers, result.message)
+      end
+
+      def batch(options = {}, &block)
+        batch_client = Webceo::Api::BatchClient.new
+        if block
+          yield batch_client
+          batch_client.make_request
+        else
+          batch_client
+        end
       end
     end # end of class Client
   end # end of module Api

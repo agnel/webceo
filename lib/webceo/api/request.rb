@@ -8,7 +8,7 @@ module Webceo
     # @author Agnel Waghela <agnelwaghela@gmail.com>
     #
     class Request
-      attr_accessor :method_name, :data
+      attr_accessor :method_name, :data, :id
 
       #
       # Initializes a Request instance for use in our Client
@@ -19,6 +19,7 @@ module Webceo
       def initialize(method_name, data = {})
         @method_name = method_name
         @data = data.with_indifferent_access
+        @id = @data[:id]
       end
 
       #
@@ -30,14 +31,20 @@ module Webceo
       #
       # @return [JSON] API Request Hash
       #
-      def to_json
-        MultiJson.dump({
+      def to_json(*)
+        ::MultiJson.dump(self.to_h)
+      end
+
+      def to_h
+        {
           method: @method_name.to_s,
           key: Webceo.configuration.api_key,
-          id: @data[:id],
+          id: @id,
           data: @data
-        })
+        }
       end
+      alias :to_hash :to_h
+
     end # end of class Request
   end # end of module Api
 end # end of module Webceo

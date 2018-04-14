@@ -23,14 +23,27 @@ module Webceo
       # @see Webceo::Api::RESPONSE_CODES
       #
       def check_for_errors
-        info = MultiJson.load(self.body).first
-
-        if info['result'] && info['result'] != 0
-          if info['result'] == 500
-            raise Webceo::Api::ServerError.new(self.status.to_i, self.body)
+        info = (self.parse_json.is_a?(Array)) ? self.parse_json.first : self.parse_json
+        if info[:result] && info[:result] != 0
+          if info[:result] == 500
+            Webceo::Api::ServerError.new(self.status.to_i, info)
           else
-            raise Webceo::Api::ClientError.new(self.status.to_i, self.body)
+            Webceo::Api::ClientError.new(self.status.to_i, info)
           end
+        end
+      end
+
+      #
+      # This method parses the response body symbolizing the keys
+      # It raises errors encountered when parsing response body
+      #
+      # @return [Array<Hash>] JSON parsed response
+      #
+      def parse_json(options = {})
+        begin
+          ::MultiJson.load(self.body, :symbolize_keys => true)
+        rescue ::MultiJson::ParseError => e
+          e.cause
         end
       end
     end # end of class Response

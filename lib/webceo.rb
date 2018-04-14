@@ -13,12 +13,15 @@ module Webceo
   end
 
   def self.configure
-    self.configuration ||= Webceo::Configuration.new
     yield(configuration)
   end
 
+  def self.configuration
+    @configuration ||= Webceo::Configuration.new
+  end
+
   def self.reset
-    self.configuration = Webceo::Configuration.new
+    @configuration = Webceo::Configuration.new
   end
 
 end # end of module Webceo
